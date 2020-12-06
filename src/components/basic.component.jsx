@@ -18,7 +18,7 @@ export default function BasicText(value) {
         <div>
             {console.log(data)}
             {data.map(({letter}) => (
-                <p>{letter}</p>
+                <li key={letter}>{letter}</li>
             ))}
         </div>
     );
