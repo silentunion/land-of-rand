@@ -1,6 +1,6 @@
 import React from 'react';
 import './main.scss';
-import WordViewContainer from './components/WordViewContainer';
+import WordViewContainer from './components/wordview/WordViewContainer';
 
 function App() {
   return (
