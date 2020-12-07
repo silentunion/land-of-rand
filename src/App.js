@@ -1,13 +1,11 @@
 import React from 'react';
 import './main.scss';
-import WordViewContainer from './components/wordview/WordViewContainer';
-import TypeChooserContainer from './components/typechooser/TypeChooserContainer';
+import NameGenContainer from './components/NameGenContainer';
 
 function App() {
   return (
     <div className="App">
-      <TypeChooserContainer />
-      <WordViewContainer />
+      <NameGenContainer />
     </div>
   );
 }
