@@ -3,13 +3,11 @@ import { useEffect } from 'react';
 import { useState } from 'react';
 import axios from 'axios';
 
-import testNames from './testNames.json';
-
-export default function BasicText(value) {
+const WordView = () => {
     const [data, setData] = useState([]);
 
-    const template = 'cvccv'
-    const num = 6
+    const template = 'cvccv';
+    const num = 20;
 
     useEffect(() => {
         axios
@@ -25,4 +23,6 @@ export default function BasicText(value) {
             ))}
         </div>
     );
-}
+};
+
+export default WordView;

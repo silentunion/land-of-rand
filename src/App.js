@@ -1,12 +1,11 @@
 import React from 'react';
-import logo from './logo.svg';
 import './main.scss';
-import BasicText from './components/basic.component';
+import WordViewContainer from './components/wordview/WordViewContainer';
 
 function App() {
   return (
     <div className="App">
-      <BasicText />
+      <WordViewContainer />
     </div>
   );
 }
