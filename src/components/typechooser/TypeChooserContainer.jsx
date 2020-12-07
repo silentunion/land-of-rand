@@ -3,7 +3,7 @@ import React from 'react';
 import TypeChooser from './typechooser.component';
 
 const TypeChooserContainer = () => (
-    <div className="scrollbox">
+    <div className="wordview-scrollbox">
         <TypeChooser />
     </div>
 );

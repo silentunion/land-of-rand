@@ -3,25 +3,35 @@ import { useEffect } from 'react';
 import { useState } from 'react';
 import axios from 'axios';
 
+const useTypeForm = (callback) => {
+    const [inputs, setInputs] = useState([]);
+
+    const handleSubmit = (event) => {
+        if (event) {
+            event.preventDefault();
+        }
+        callback();
+    };
+
+    const handleInputChange = (event) => {
+        event.persist();
+        setInputs(inputs => ({...inputs, [event.target.name]:event.target.value}))
+    };
+
+    return {handleSubmit, handleInputChange, inputs};
+};
+
 const TypeChooser = () => {
-    const [data, setData] = useState([]);
-
-    const template = 'cvccv';
-    const num = 20;
-
-    useEffect(() => {
-        axios
-            .get(`http://localhost:5000/words/${template}/${num}`)
-            .then((res) => setData(res.data))
-    }, []);
+    const {inputs, handleInputChange, handleSubmit} = useTypeForm();
 
     return(
-        <div>
-            {console.log(data)}
-            {data.map(({word}) => (
-                <li key={word}>{word}</li>
-            ))}
-        </div>
+        <form onSubmit={handleSubmit}>
+            <label>
+                Template:
+                <input type="text" name="template" onChange={handleInputChange}/>
+            </label>
+            <input type="submit" name="Submit" />
+        </form>
     );
 };
 

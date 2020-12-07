@@ -3,15 +3,20 @@ import { useEffect } from 'react';
 import { useState } from 'react';
 import axios from 'axios';
 
-const WordView = () => {
+const WordView = (template) => {
     const [data, setData] = useState([]);
 
-    const template = 'cvccv';
+    var temp = '';
+    if(template) {
+        temp = template;
+    } else {
+        temp = 'cvcvcv';
+    };
     const num = 20;
 
     useEffect(() => {
         axios
-            .get(`http://localhost:5000/words/${template}/${num}`)
+            .get(`http://localhost:5000/words/${temp}/${num}`)
             .then((res) => setData(res.data))
     }, []);
 

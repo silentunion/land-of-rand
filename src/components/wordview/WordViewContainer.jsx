@@ -3,7 +3,7 @@ import React from 'react';
 import WordView from './wordview.component';
 
 const WordViewContainer = () => (
-    <div className="scrollbox">
+    <div className="wordview-scrollbox">
         <WordView />
     </div>
 );
