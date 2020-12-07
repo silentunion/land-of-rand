@@ -3,9 +3,9 @@ import { useEffect } from 'react';
 import { useState } from 'react';
 import axios from 'axios';
 
-import testNames from './testNames.json';
+import WordView from './wordview/wordview.component';
 
-export default function BasicText(value) {
+export default function WordViewContainer() {
     const [data, setData] = useState([]);
 
     const template = 'cvccv'
@@ -19,10 +19,7 @@ export default function BasicText(value) {
 
     return(
         <div>
-            {console.log(data)}
-            {data.map(({word}) => (
-                <li key={word}>{word}</li>
-            ))}
+            <WordView />
         </div>
     );
 }

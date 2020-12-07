@@ -1,11 +1,11 @@
 import React from 'react';
 import './main.scss';
-import BasicText from './components/basic.component';
+import WordViewContainer from './components/WordViewContainer';
 
 function App() {
   return (
     <div className="App">
-      <BasicText />
+      <WordViewContainer />
     </div>
   );
 }
