@@ -3,35 +3,49 @@ import { useEffect } from 'react';
 import { useState } from 'react';
 import axios from 'axios';
 
-const useTypeForm = (callback) => {
-    const [inputs, setInputs] = useState([]);
+import wordview from './../wordview/wordview.component';
 
-    const handleSubmit = (event) => {
-        if (event) {
-            event.preventDefault();
-        }
-        callback();
+// const useTypeForm = (callback) => {
+//     const [template, setTemplate] = useState([]);
+
+//     const handleSubmit = (event) => {
+//         if (event) {
+//             event.preventDefault();
+//         }
+//         return template;
+//     };
+
+//     const handleInputChange = (event) => {
+//         event.persist();
+//         setTemplate(inputs => ({...template, [event.target.name]:event.target.value}))
+//     };
+
+//     return {handleSubmit, handleInputChange, template};
+// };
+
+const TypeChooser = ({setTemplate}) => {
+    // const [template, setTemplate] = useState("");
+
+    const handleChange = (event, template) => {
+        setTemplate(event.target.value);
+        return template;
     };
 
-    const handleInputChange = (event) => {
-        event.persist();
-        setInputs(inputs => ({...inputs, [event.target.name]:event.target.value}))
+    const handleSubmit = (event, template) => {
+        return template;
     };
-
-    return {handleSubmit, handleInputChange, inputs};
-};
-
-const TypeChooser = () => {
-    const {inputs, handleInputChange, handleSubmit} = useTypeForm();
 
     return(
-        <form onSubmit={handleSubmit}>
-            <label>
-                Template:
-                <input type="text" name="template" onChange={handleInputChange}/>
-            </label>
-            <input type="submit" name="Submit" />
-        </form>
+        <div className="wordview-scrollbox">
+            <button onClick={setTemplate}>Set Template</button>
+            {/* <form onSubmit={handleSubmit}>
+                <label>
+                    Template:
+                    <input type="text" name="template" onChange={handleChange}/>
+                </label>
+                <input type="submit" name="Submit" />
+            </form> */}
+        </div>
     );
 };
 
