@@ -1,4 +1,5 @@
 import React from 'react';
+import { useForm } from 'react-hook-form';
 import { useEffect } from 'react';
 import { useState } from 'react';
 import axios from 'axios';
@@ -23,28 +24,26 @@ import wordview from './../wordview/wordview.component';
 //     return {handleSubmit, handleInputChange, template};
 // };
 
-const TypeChooser = ({setTemplate}) => {
-    // const [template, setTemplate] = useState("");
+const TypeChooser = ({onceSubmitted}) => {
+    const { register, handleSubmit } = useForm();
 
-    const handleChange = (event, template) => {
-        setTemplate(event.target.value);
-        return template;
-    };
-
-    const handleSubmit = (event, template) => {
-        return template;
-    };
+    const onSubmit = (data) => {
+        onceSubmitted(data);
+    }
 
     return(
         <div className="wordview-scrollbox">
-            <button onClick={setTemplate}>Set Template</button>
-            {/* <form onSubmit={handleSubmit}>
+            {/* <button onClick={setTemplate}>Set Template</button> */}
+            <form onSubmit={handleSubmit(onSubmit)}>
                 <label>
                     Template:
-                    <input type="text" name="template" onChange={handleChange}/>
                 </label>
+                <input
+                    type="text"
+                    name="template" 
+                    ref={register} />
                 <input type="submit" name="Submit" />
-            </form> */}
+            </form>
         </div>
     );
 };
