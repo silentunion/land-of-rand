@@ -7,29 +7,25 @@ import WordView from './wordview/wordview.component';
 
 const NameGenContainer = () => {
     const [data, setData] = useState([]);
-    const [template, setTemplate] = useState('');
-    const [num, setNum] = useState(5);
+    const [words, setWords] = useState([]);
 
     useEffect(() => {
-        console.log(template);
         fetchData();
-        console.log(template);
-    }, [template]);
+    }, [words]);
 
     const fetchData = () => {
         axios
-            .get(`http://localhost:5000/words/${num}/${template.template}`)
+            .get(`http://localhost:5000/words/${words.num}/${words.template}`)
             .then((res) => setData(res.data))
-            .then(() => console.log(num, template))
     };
 
-    const changeTemplate = (temp) => {
-        setTemplate(temp);
+    const changeTemplate = (formData) => {
+        setWords(formData);
     };
 
     return (
     <div>
-        <TypeChooser onceSubmitted={(temp) => changeTemplate(temp)} />
+        <TypeChooser onceSubmitted={(formData) => changeTemplate(formData)} />
         <WordView data={data} />
     </div>
     );

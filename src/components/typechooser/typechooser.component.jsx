@@ -35,13 +35,10 @@ const TypeChooser = ({onceSubmitted}) => {
         <div className="wordview-scrollbox">
             {/* <button onClick={setTemplate}>Set Template</button> */}
             <form onSubmit={handleSubmit(onSubmit)}>
-                <label>
-                    Template:
-                </label>
-                <input
-                    type="text"
-                    name="template" 
-                    ref={register} />
+                <label>Template:</label>
+                <input type="text" name="template" ref={register} />
+                <label>Number of Words:</label>
+                <input type="number" name="num" ref={register} />
                 <input type="submit" name="Submit" />
             </form>
         </div>
