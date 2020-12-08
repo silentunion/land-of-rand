@@ -1,11 +1,11 @@
 import React from 'react';
 import './main.scss';
-import NameGenContainer from './components/NameGenContainer';
+import WordgenContainer from './components/wordgen/WordgenContainer';
 
 function App() {
   return (
     <div className="App">
-      <NameGenContainer />
+      <WordgenContainer />
     </div>
   );
 }
