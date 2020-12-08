@@ -36,9 +36,9 @@ const TypeChooser = ({onceSubmitted}) => {
             {/* <button onClick={setTemplate}>Set Template</button> */}
             <form onSubmit={handleSubmit(onSubmit)}>
                 <label>Template:</label>
-                <input type="text" name="template" ref={register} />
+                <input type="text" name="template" defaultValue="vcvcv" ref={register} />
                 <label>Number of Words:</label>
-                <input type="number" name="num" ref={register} />
+                <input type="number" name="num" min="1" defaultValue="1" ref={register} />
                 <input type="submit" name="Submit" />
             </form>
         </div>
