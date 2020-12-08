@@ -14,9 +14,11 @@ const NameGenContainer = () => {
     }, [words]);
 
     const fetchData = () => {
-        axios
-            .get(`http://localhost:5000/words/${words.num}/${words.template}`)
-            .then((res) => setData(res.data))
+        if (words.num && words.template) {
+            axios
+                .get(`http://localhost:5000/words/${words.num}/${words.template}`)
+                .then((res) => setData(res.data))
+        }
     };
 
     const changeTemplate = (formData) => {
