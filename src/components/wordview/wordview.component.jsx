@@ -3,21 +3,10 @@ import { useEffect } from 'react';
 import { useState } from 'react';
 import axios from 'axios';
 
-const WordView = () => {
-    const [data, setData] = useState([]);
-
-    const template = 'cvccv';
-    const num = 20;
-
-    useEffect(() => {
-        axios
-            .get(`http://localhost:5000/words/${template}/${num}`)
-            .then((res) => setData(res.data))
-    }, []);
+const WordView = ({template, data}) => {
 
     return(
-        <div>
-            {console.log(data)}
+        <div className="wordview-scrollbox">
             {data.map(({word}) => (
                 <li key={word}>{word}</li>
             ))}
