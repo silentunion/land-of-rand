@@ -10,25 +10,25 @@ const NameGenContainer = () => {
     const [template, setTemplate] = useState('vc');
     const [num, setNum] = useState(5);
 
+
     useEffect(() => {
+        fetchData()
+    }, [template]);
+
+    const fetchData = () => {
         axios
             .get(`http://localhost:5000/words/${template}/${num}`)
             .then((res) => setData(res.data))
-    }, []);
+    };
 
     const changeTemplate = (temp) => {
         setTemplate(temp);
-        console.log(temp);
-        return (
-            <div>
-                <WordView temp={template} data={data} />
-            </div>
-        );
+        fetchData();
     };
 
     return (
     <div>
-        <TypeChooser setTemplate={(temp) => changeTemplate('vvcccccv')} />
+        <TypeChooser setTemplate={() => changeTemplate('vvcvv')} />
         <WordView temp={template} data={data} />
     </div>
     );
