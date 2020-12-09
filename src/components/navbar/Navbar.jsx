@@ -8,7 +8,7 @@ const Navbar = () => {
     <nav>
       <div className="logo">Land of Rand</div>
       <ul className="nav-links" 
-        style={{transform: open ? "translateX(0%) translateY(4rem)" : ""}}>
+        style={{transform: open ? "translateY(4rem)" : ""}}>
         <li><a href="home">Home</a></li>
         <li><a href="words">Words</a></li>
         <li><a href="about">About</a></li>
