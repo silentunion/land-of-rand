@@ -7,4 +7,5 @@
     border: 1px solid $color-black;
     background-color: $color-white;
     overflow: auto;
+    box-sizing: content-box;
 }

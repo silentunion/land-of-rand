@@ -9,7 +9,7 @@ const WordForm = ({onceSubmitted}) => {
   }
 
   return(
-    <div className="wordview-scrollbox">
+    <div className="wordform-scrollbox">
       <form onSubmit={handleSubmit(onSubmit)}>
         <label>Template:</label>
         <input type="text" name="template" defaultValue="vcvcv" ref={register} />

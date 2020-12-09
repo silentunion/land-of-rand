@@ -1,0 +1,30 @@
+nav {
+    display:flex;
+    justify-content: space-around;
+    min-height: 10vh;
+    align-items: center;
+    background-color: $color-secondary;
+
+    .logo {
+        font-family: Vivaldi, Georgia, Times, 'Times New Roman', serif;
+        font-size: 3.2rem;
+        font-style: italic;
+        color: $color-base;
+    }
+
+    .nav-links {
+        display: flex;
+        justify-content: space-around;
+        width: 20%;
+
+        a {
+            font-family: Georgia, Times, 'Times New Roman', serif;
+            font-size: 1.5rem;
+            color: $color-base;
+
+            &:hover {
+                color: darken($color-base, 10%);
+            }
+        }
+    }
+}
