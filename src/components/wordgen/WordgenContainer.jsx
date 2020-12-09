@@ -22,7 +22,7 @@ const WordgenContainer = () => {
   };
 
   return (
-  <div>
+  <div className="wordgen-container">
     <WordForm onceSubmitted={(formData) => changeTemplate(formData)} />
     <WordView data={data} />
   </div>
