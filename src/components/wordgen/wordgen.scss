@@ -4,6 +4,30 @@
     align-items: center;
     justify-content: center;
 
+    .word-menu {
+        margin: 25px;
+        height: 200px;
+        width: 180px;
+        border: 1px solid $color-black;
+        background-color: $color-white;
+        overflow: auto;
+        box-sizing: content-box;
+
+        li {
+            margin-left: 1rem;
+            padding: 0.5rem;
+            background-color: $color-white;
+            border: 1px solid $color-black;
+            border-top-left-radius: 1rem;
+            border-bottom-left-radius: 1rem;
+            text-align: right;
+
+            a {
+                padding-right: 0.3rem;
+            }
+        }
+    }
+
     .wordform-scrollbox {
         margin: 25px;
         padding: 1rem;
