@@ -17,6 +17,15 @@ nav {
         justify-content: space-around;
         width: 20%;
 
+        li {
+            border-right: 1px solid transparentize($color-base, 0.8);
+            padding: 0.5rem 7.5%;
+            
+            &:last-of-type {
+                border-right: 0rem solid;
+            }
+        }
+
         a {
             font-family: Georgia, Times, 'Times New Roman', serif;
             font-size: 1.5rem;
@@ -29,7 +38,50 @@ nav {
     }
 
     .nav-burger {
-        font-size: 2.5rem;
+        font-size: 2rem;
         color: $color-base;
+        display: none;
+        cursor: pointer;
+    }
+}
+
+@media all and (max-width: 768px) {
+    nav {
+        .nav-links {
+            position: absolute;
+            display: block;
+            top: 0;
+            left: 0;
+            height: 100vh;
+            background-color: $color-secondary;
+            padding: 0.5rem;
+            width: 50%;
+            transform: translateX(-100%) translateY(4rem);
+            transition: 0.5s ease-in-out;
+
+            li {
+                padding: 0.5rem;
+                border-bottom: 1px solid transparentize($color-base, 0.8);
+
+                &:last-of-type {
+                    border-bottom: 0rem solid;
+                }
+
+                &:hover {
+                    background-color: lighten($color-secondary, 10%);
+                    color: 0px solid $color-base;
+                }
+            }
+
+            a {
+                &:hover {
+                    color: $color-base;
+                }
+            }
+        }
+
+        .nav-burger {
+            display: block;
+        }
     }
 }
