@@ -1,7 +1,7 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
 
-const WordForm = ({onceSubmitted, onClickRandom}) => {
+const FormTemplate = ({onceSubmitted, onClickRandom}) => {
   const { register, handleSubmit } = useForm({
     defaultValues: {
       template: "vcvcvc",
@@ -26,11 +26,11 @@ const WordForm = ({onceSubmitted, onClickRandom}) => {
         <input type="number" name="num" min="1" ref={register} />
         <input type="submit" name="Submit" />
       </form>
-      <button onClick={handleEvent} class="button-random">
+      <button onClick={handleEvent} className="button-random">
         Completely Random
       </button>
     </div>
   );
 };
 
-export default WordForm;
+export default FormTemplate;
