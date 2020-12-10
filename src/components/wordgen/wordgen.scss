@@ -1,6 +1,6 @@
 .wordgen-container {
     display: flex;
-    height: 20rem;
+    height: 30rem;
     align-items: center;
     justify-content: center;
 
@@ -8,7 +8,7 @@
         margin: 0;
         padding: 1rem;
         padding-right: 0;
-        height: 200px;
+        height: 400px;
         width: 180px;
         border: 1px solid $color-black;
         border-right: 0;
@@ -45,7 +45,7 @@
         margin: 0;
         padding: 1rem;
         display: inline-block;
-        height: 200px;
+        height: 400px;
         width: 180px;
         border: 1px solid $color-black;
         border-right: 0;
@@ -58,8 +58,22 @@
         margin: 0;
         padding: 1rem;
         display: inline-block;
-        height: 200px;
-        width: 180px;
+        height: 400px;
+        width: 360px;
+        border: 1px solid $color-black;
+        background-color: $color-white;
+        overflow: auto;
+        box-sizing: content-box;
+    }
+}
+
+@media all and (max-width: 768px) {
+    .wordview-scrollbox {
+        margin: 0;
+        padding: 1rem;
+        display: inline-block;
+        height: 400px;
+        width: 360px;
         border: 1px solid $color-black;
         background-color: $color-white;
         overflow: auto;
