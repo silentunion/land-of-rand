@@ -2,6 +2,7 @@ import React from 'react';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 
+import WordMenu from './wordmenu.component'
 import WordForm from './wordform.component';
 import WordView from './wordview.component';
 
@@ -23,6 +24,7 @@ const WordgenContainer = () => {
 
   return (
   <div className="wordgen-container">
+    <WordMenu />
     <WordForm onceSubmitted={(formData) => changeTemplate(formData)} />
     <WordView data={data} />
   </div>
