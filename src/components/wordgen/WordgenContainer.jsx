@@ -27,6 +27,7 @@ const WordgenContainer = () => {
     }
   }, [words, endpoint]);
 
+
   const handleEvent = event => {
     setEndpoint(2);
     setWords({'num': 5});
@@ -37,20 +38,12 @@ const WordgenContainer = () => {
     setWords(formData);
   };
 
-  const testThis = (tab) => {
-    console.log('Tab' + tab);
-    setForm(tab);
-    console.log('Form ' + form);
-  };
-
   return (
   <div className="wordgen-container">
-    <WordMenu tabSelector={(tab) => testThis(tab)} />
-    <div>
-      {form === 0 ? 
-        <FormRandom onClickRandom={handleEvent} /> : 
-        <FormTemplate onceSubmitted={(formData) => changeTemplate(formData)} />}
-    </div>
+    <WordMenu tabSelector={(hmm) => setForm(hmm)} />
+    {form == 0 ? 
+      <FormRandom onClickRandom={handleEvent} /> : 
+      <FormTemplate onceSubmitted={(formData) => changeTemplate(formData)} />}
     <WordView data={data} />
   </div>
   );

@@ -1,7 +1,7 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
 
-const FormTemplate = ({onceSubmitted, onClickRandom}) => {
+const FormTemplate = ({onceSubmitted}) => {
   const { register, handleSubmit } = useForm({
     defaultValues: {
       template: "vcvcvc",
@@ -13,10 +13,6 @@ const FormTemplate = ({onceSubmitted, onClickRandom}) => {
     onceSubmitted(data);
   };
 
-  const handleEvent = event => {
-    onClickRandom(event);
-  };
-
   return(
     <div className="wordform-scrollbox">
       <form onSubmit={handleSubmit(onSubmit)}>
@@ -26,9 +22,6 @@ const FormTemplate = ({onceSubmitted, onClickRandom}) => {
         <input type="number" name="num" min="1" ref={register} />
         <input type="submit" name="Submit" />
       </form>
-      <button onClick={handleEvent} className="button-random">
-        Completely Random
-      </button>
     </div>
   );
 };
