@@ -10,7 +10,6 @@ const WordForm = ({onceSubmitted, onClickRandom}) => {
   });
 
   const onSubmit = (data) => {
-    register()
     onceSubmitted(data);
   };
 

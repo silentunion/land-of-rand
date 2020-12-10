@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import axios from 'axios';
 
 import WordMenu from './wordmenu.component'
-import WordForm from './wordform.component';
+import WordForm from './forms/formTemplate';
 import WordView from './wordview.component';
 
 const WordgenContainer = () => {
