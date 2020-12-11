@@ -14,14 +14,16 @@ const FormTemplate = ({onceSubmitted}) => {
   };
 
   return(
-    <div className="namegen-form-scrollbox">
-      <form onSubmit={handleSubmit(onSubmit)}>
-        <label>Template:</label>
-        <input type="text" name="template" ref={register} />
-        <label>Number of Words:</label>
-        <input type="number" name="num" min="1" ref={register} />
-        <input type="submit" name="Submit" />
-      </form>
+    <div className="form-container">
+      <div className="namegen-form">
+        <form onSubmit={handleSubmit(onSubmit)}>
+          <label>Template:</label>
+          <input type="text" name="template" ref={register} />
+          <label>Number of Words:</label>
+          <input type="number" name="num" min="1" ref={register} />
+          <input type="submit" name="Submit" />
+        </form>
+      </div>
     </div>
   );
 };
