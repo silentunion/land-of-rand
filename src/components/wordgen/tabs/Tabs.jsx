@@ -2,6 +2,10 @@ import React, { useState } from 'react';
 
 const tabItems = [
   {
+    id: 0,
+    title: 'None',
+  },
+  {
     id: 1,
     title: 'Random',
   },
@@ -22,9 +26,9 @@ const TabItems = ({title, onItemClicked, isActive=false}) => {
 const Tabs = ({getActiveTab}) => {
   const [active, setActive] = useState(0);
 
-  const handleFormChange = (id) => {
+  const handleFormChange = (id, title) => {
     setActive(id);
-    return getActiveTab(id);
+    return getActiveTab(title);
   };
 
   return (
@@ -35,7 +39,7 @@ const Tabs = ({getActiveTab}) => {
           <TabItems 
             key={title}
             title={title}
-            onItemClicked={() => handleFormChange(id)}
+            onItemClicked={() => handleFormChange(id, title)}
             isActive={active === id} />
         )}
       </div>

@@ -11,7 +11,7 @@ const WordgenContainer = () => {
   const [data, setData] = useState([]);
   const [words, setWords] = useState([]);
   const [endpoint, setEndpoint] = useState(0);
-  const [form, setForm] = useState(1);
+  const [form, setForm] = useState('None');
   
   useEffect(() => {
     if (endpoint === 0) {
@@ -37,12 +37,17 @@ const WordgenContainer = () => {
     setWords(formData);
   };
 
+  const chooseForm = () => {
+    switch (form) {
+      case 'Random': return <FormRandom onClickRandom={handleEvent} />;
+      case 'Template': return <FormTemplate onceSubmitted={(formData) => changeTemplate(formData)} />;
+      default: return null;
+  }};
+
   return (
   <div className="wordgen-container">
     <Tabs getActiveTab={(tab) => setForm(tab)} />
-    {form === 1 ? 
-      <FormRandom onClickRandom={handleEvent} /> : 
-      <FormTemplate onceSubmitted={(formData) => changeTemplate(formData)} />}
+    {chooseForm()}
     <Viewer data={data} />
   </div>
   );
