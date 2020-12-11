@@ -1,7 +1,7 @@
 import React from 'react';
 
 
-const WordView = ({template, data}) => {
+const Viewer = ({template, data}) => {
 
   return(
     <div className="wordview-scrollbox">
@@ -12,4 +12,4 @@ const WordView = ({template, data}) => {
   );
 };
 
-export default WordView;
+export default Viewer;

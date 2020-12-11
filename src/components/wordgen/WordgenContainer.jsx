@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import axios from 'axios';
 
 import Tabs from './tabs/Tabs';
-import WordView from './viewWord';
+import Viewer from './Viewer';
 import FormRandom from './forms/FormRandom';
 import FormTemplate from './forms/FormTemplate';
 
@@ -43,7 +43,7 @@ const WordgenContainer = () => {
     {form === 1 ? 
       <FormRandom onClickRandom={handleEvent} /> : 
       <FormTemplate onceSubmitted={(formData) => changeTemplate(formData)} />}
-    <WordView data={data} />
+    <Viewer data={data} />
   </div>
   );
 };
