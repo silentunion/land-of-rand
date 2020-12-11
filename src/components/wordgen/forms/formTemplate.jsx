@@ -1,24 +1,29 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
 
-const WordForm = ({onceSubmitted}) => {
-  const { register, handleSubmit } = useForm();
+const FormTemplate = ({onceSubmitted}) => {
+  const { register, handleSubmit } = useForm({
+    defaultValues: {
+      template: "vcvcvc",
+      num: 1
+    }
+  });
 
   const onSubmit = (data) => {
-    onceSubmitted(data);
-  }
+    return onceSubmitted(data);
+  };
 
   return(
     <div className="wordform-scrollbox">
       <form onSubmit={handleSubmit(onSubmit)}>
         <label>Template:</label>
-        <input type="text" name="template" defaultValue="vcvcv" ref={register} />
+        <input type="text" name="template" ref={register} />
         <label>Number of Words:</label>
-        <input type="number" name="num" min="1" defaultValue="1" ref={register} />
+        <input type="number" name="num" min="1" ref={register} />
         <input type="submit" name="Submit" />
       </form>
     </div>
   );
 };
 
-export default WordForm;
+export default FormTemplate;
