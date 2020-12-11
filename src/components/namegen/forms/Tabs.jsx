@@ -17,7 +17,7 @@ const tabItems = [
 
 const TabItems = ({title, onItemClicked, isActive=false}) => {
   return (
-    <div className="tabitem" onClick={onItemClicked}>
+    <div className={isActive ? 'tabitem' : 'tabitem tabitem--inactive'} onClick={onItemClicked}>
       <p>{title}</p>
     </div>
   )
@@ -32,8 +32,8 @@ const Tabs = ({getActiveTab}) => {
   };
 
   return (
-    <div>
-      <div>
+    <div className="wrapper-tabs">
+      <div className="tabs">
         {
           tabItems.map(({id, title}) => 
           <TabItems 

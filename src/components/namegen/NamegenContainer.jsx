@@ -2,12 +2,13 @@ import React from 'react';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 
-import Tabs from './tabs/Tabs';
-import Viewer from './Viewer';
+import Tabs from './forms/Tabs';
+import NameViewer from './NameViewer';
+
 import FormRandom from './forms/FormRandom';
 import FormTemplate from './forms/FormTemplate';
 
-const WordgenContainer = () => {
+const NamegenContainer = () => {
   const [data, setData] = useState([]);
   const [words, setWords] = useState([]);
   const [endpoint, setEndpoint] = useState(0);
@@ -27,7 +28,7 @@ const WordgenContainer = () => {
     }
   }, [words, endpoint]);
 
-  const handleEvent = event => {
+  const handleFormRandom = () => {
     setEndpoint(2);
     setWords({'num': 5});
   };
@@ -39,7 +40,7 @@ const WordgenContainer = () => {
 
   const chooseForm = () => {
     switch (form) {
-      case 'Random': return <FormRandom onClickRandom={handleEvent} />;
+      case 'Random': return <FormRandom onClickRandom={handleFormRandom} />;
       case 'Template': return <FormTemplate onceSubmitted={(formData) => changeTemplate(formData)} />;
       default: return null;
   }};
@@ -48,9 +49,9 @@ const WordgenContainer = () => {
   <div className="wordgen-container">
     <Tabs getActiveTab={(tab) => setForm(tab)} />
     {chooseForm()}
-    <Viewer data={data} />
+    <NameViewer data={data} />
   </div>
   );
 };
 
-export default WordgenContainer;
+export default NamegenContainer;

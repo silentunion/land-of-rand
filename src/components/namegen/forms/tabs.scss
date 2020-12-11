@@ -1,0 +1,26 @@
+.tabs {
+    transform: translateY(-5rem);
+}
+
+.tabitem {
+    border: 2px solid #fff;
+    cursor: pointer;
+    width: 100px;
+    height: 50px;
+    text-align: center;
+    padding: 15px;
+    background-color: $color-white;
+    border: 1px solid $color-black;
+    border-right: 0.5px dashed $color-grey;
+    border-top-left-radius: 1rem;
+    border-bottom-left-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    transform: translateX(1px)
+  }
+  
+  .tabitem--inactive {
+    opacity: 0.3;
+    filter: grayscale(100%);
+  }
