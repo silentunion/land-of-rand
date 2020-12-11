@@ -1,5 +1,7 @@
 import React from 'react';
 
+import Tabs from './tabs/Tabs'
+
 const WordMenu = ({tabSelector}) => {
   const changeTab = tab => {
     return tabSelector(tab);
@@ -7,10 +9,11 @@ const WordMenu = ({tabSelector}) => {
 
   return (
     <div className="word-menu">
-      <ul>
+      <Tabs />
+      {/* <ul>
         <li><a onClick={(e) => changeTab(0)} href="form-random">Random</a></li>
         <li><a onClick={(e) => changeTab(1)} href="form-template">Template</a></li>
-      </ul>
+      </ul> */}
     </div>
   );
 };

@@ -8,14 +8,14 @@ const tabItems = [
   },
   {
     id: 2,
-    title: 'STEP 3',
-    content: 'random content',
+    title: 'TEMPLATE',
+    content: 'template',
   },
 ];
 
 const TabItems = ({title, onItemClicked, isActive=false}) => {
   return (
-    <div onClick={onItemClicked}>
+    <div className="tabitem" onClick={onItemClicked}>
       <p>{title}</p>
     </div>
   )
@@ -29,7 +29,7 @@ const Tabs = () => {
       <div>
         {
           tabItems.map(({id, title}) => 
-          <TabItem 
+          <TabItems 
             key={title}
             title={title}
             onItemClicked={() => setActive(id)}

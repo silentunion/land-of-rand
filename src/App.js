@@ -2,7 +2,7 @@ import React from 'react';
 import './main.scss';
 
 import NavBar from './components/navbar/Navbar';
-import WordgenContainer from './components/wordgen/WordgenContainer';
+import WordgenContainer from './components/newwordgen/WordgenContainer';
 
 import TabsComponent from './components/wordgen/tut/Tab';
 
@@ -11,7 +11,6 @@ function App() {
     <div className="App">
       <NavBar />
       <WordgenContainer />
-      <TabsComponent />
     </div>
   );
 }
