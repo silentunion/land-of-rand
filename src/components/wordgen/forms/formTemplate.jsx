@@ -10,7 +10,7 @@ const FormTemplate = ({onceSubmitted}) => {
   });
 
   const onSubmit = (data) => {
-    onceSubmitted(data);
+    return onceSubmitted(data);
   };
 
   return(

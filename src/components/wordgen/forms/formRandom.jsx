@@ -3,7 +3,7 @@ import React from 'react';
 const FormRandom = ({onClickRandom}) => {
 
   const handleEvent = event => {
-    onClickRandom(event);
+    return onClickRandom(event);
   };
 
   return(
