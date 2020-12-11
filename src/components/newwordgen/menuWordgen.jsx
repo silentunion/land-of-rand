@@ -9,7 +9,7 @@ const WordMenu = ({tabSelector}) => {
 
   return (
     <div className="word-menu">
-      <Tabs />
+      
       {/* <ul>
         <li><a onClick={(e) => changeTab(0)} href="form-random">Random</a></li>
         <li><a onClick={(e) => changeTab(1)} href="form-template">Template</a></li>

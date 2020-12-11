@@ -1,17 +1,21 @@
 import React, { useState } from 'react';
 
+import FormRandom from '../forms/FormRandom';
+import FormTemplate from '../forms/FormTemplate';
+
+
 const tabItems = [
   {
     id: 1,
-    title: 'RANDOM',
-    content: 'random content',
+    title: 'Random',
   },
   {
     id: 2,
-    title: 'TEMPLATE',
-    content: 'template',
+    title: 'Template',
   },
 ];
+
+
 
 const TabItems = ({title, onItemClicked, isActive=false}) => {
   return (
@@ -21,8 +25,13 @@ const TabItems = ({title, onItemClicked, isActive=false}) => {
   )
 };
 
-const Tabs = () => {
+const Tabs = ({getActiveTab}) => {
   const [active, setActive] = useState(0);
+
+  const handleFormChange = (id) => {
+    setActive(id);
+    return getActiveTab(id);
+  };
 
   return (
     <div>
@@ -32,13 +41,13 @@ const Tabs = () => {
           <TabItems 
             key={title}
             title={title}
-            onItemClicked={() => setActive(id)}
+            onItemClicked={() => handleFormChange(id)}
             isActive={active === id} />
         )}
       </div>
       <div>
-        {tabItems.map(({id, content}) => {
-          return active === id ? content : ''
+        {tabItems.map(({id, title}) => {
+          return active === id ? () => handleFormChange(title) : ''
         })}
       </div>
     </div>

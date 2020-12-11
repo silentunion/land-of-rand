@@ -3,9 +3,10 @@ import { useState, useEffect } from 'react';
 import axios from 'axios';
 
 import WordMenu from './menuWordgen';
+import Tabs from './tabs/Tabs';
 import WordView from './viewWord';
-import FormRandom from './forms/formRandom';
-import FormTemplate from './forms/formTemplate';
+import FormRandom from './forms/FormRandom';
+import FormTemplate from './forms/FormTemplate';
 
 const WordgenContainer = () => {
   const [data, setData] = useState([]);
@@ -39,8 +40,8 @@ const WordgenContainer = () => {
 
   return (
   <div className="wordgen-container">
-    <WordMenu tabSelector={(hmm) => setForm(hmm)} />
-    {form === 0 ? 
+    <Tabs getActiveTab={(tab) => setForm(tab)} />
+    {form === 1 ? 
       <FormRandom onClickRandom={handleEvent} /> : 
       <FormTemplate onceSubmitted={(formData) => changeTemplate(formData)} />}
     <WordView data={data} />
