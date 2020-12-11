@@ -1,9 +1,5 @@
 import React, { useState } from 'react';
 
-import FormRandom from '../forms/FormRandom';
-import FormTemplate from '../forms/FormTemplate';
-
-
 const tabItems = [
   {
     id: 1,
@@ -14,8 +10,6 @@ const tabItems = [
     title: 'Template',
   },
 ];
-
-
 
 const TabItems = ({title, onItemClicked, isActive=false}) => {
   return (
@@ -44,11 +38,6 @@ const Tabs = ({getActiveTab}) => {
             onItemClicked={() => handleFormChange(id)}
             isActive={active === id} />
         )}
-      </div>
-      <div>
-        {tabItems.map(({id, title}) => {
-          return active === id ? () => handleFormChange(title) : ''
-        })}
       </div>
     </div>
   )
