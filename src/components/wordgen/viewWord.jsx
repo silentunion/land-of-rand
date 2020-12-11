@@ -1,7 +1,7 @@
 import React from 'react';
 
 
-const NameViewer = ({data}) => {
+const WordView = ({template, data}) => {
 
   return(
     <div className="wordview-scrollbox">
@@ -12,4 +12,4 @@ const NameViewer = ({data}) => {
   );
 };
 
-export default NameViewer;
+export default WordView;

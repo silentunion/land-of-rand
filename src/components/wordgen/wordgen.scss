@@ -4,6 +4,43 @@
     align-items: center;
     justify-content: center;
 
+    .word-menu {
+        margin: 0;
+        padding: 1rem;
+        padding-right: 0;
+        height: 400px;
+        width: 180px;
+        border: 1px solid $color-black;
+        border-right: 0;
+        background-color: $color-white;
+        overflow: auto;
+        box-sizing: content-box;
+
+        li {
+            margin-left: 1rem;
+            margin-top: 0.1rem;
+            padding: 0.5rem;
+            background-color: $color-grey;
+            border: 1px solid $color-black;
+            border-right: 0px solid;
+            border-top-left-radius: 1rem;
+            border-bottom-left-radius: 1rem;
+            text-align: right;
+
+            &:first-of-type {
+                margin-top: 2rem;
+            }
+
+            a {
+                padding-right: 0.3rem;
+                font-weight: 500;
+                font-size: 1.2rem;
+                text-transform: uppercase;
+                color: $color-white;
+            }
+        }
+    }
+
     .wordform-scrollbox {
         margin: 0;
         padding: 1rem;
@@ -15,8 +52,6 @@
         background-color: $color-white;
         overflow: auto;
         box-sizing: content-box;
-        border-top-left-radius: 0.5rem;
-        border-bottom-left-radius: 0.5rem;
     }
     
     .wordview-scrollbox {
@@ -29,8 +64,6 @@
         background-color: $color-white;
         overflow: auto;
         box-sizing: content-box;
-        border-top-right-radius: 0.5rem;
-        border-bottom-right-radius: 0.5rem;
     }
 }
 

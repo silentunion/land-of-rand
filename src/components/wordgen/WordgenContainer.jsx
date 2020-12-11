@@ -2,17 +2,16 @@ import React from 'react';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 
-import Tabs from './forms/Tabs';
-import NameViewer from './NameViewer';
-
+import Tabs from './tabs/Tabs';
+import WordView from './viewWord';
 import FormRandom from './forms/FormRandom';
 import FormTemplate from './forms/FormTemplate';
 
-const NamegenContainer = () => {
+const WordgenContainer = () => {
   const [data, setData] = useState([]);
   const [words, setWords] = useState([]);
   const [endpoint, setEndpoint] = useState(0);
-  const [form, setForm] = useState('None');
+  const [form, setForm] = useState(1);
   
   useEffect(() => {
     if (endpoint === 0) {
@@ -28,7 +27,7 @@ const NamegenContainer = () => {
     }
   }, [words, endpoint]);
 
-  const handleFormRandom = () => {
+  const handleEvent = event => {
     setEndpoint(2);
     setWords({'num': 5});
   };
@@ -38,20 +37,15 @@ const NamegenContainer = () => {
     setWords(formData);
   };
 
-  const chooseForm = () => {
-    switch (form) {
-      case 'Random': return <FormRandom onClickRandom={handleFormRandom} />;
-      case 'Template': return <FormTemplate onceSubmitted={(formData) => changeTemplate(formData)} />;
-      default: return null;
-  }};
-
   return (
   <div className="wordgen-container">
     <Tabs getActiveTab={(tab) => setForm(tab)} />
-    {chooseForm()}
-    <NameViewer data={data} />
+    {form === 1 ? 
+      <FormRandom onClickRandom={handleEvent} /> : 
+      <FormTemplate onceSubmitted={(formData) => changeTemplate(formData)} />}
+    <WordView data={data} />
   </div>
   );
 };
 
-export default NamegenContainer;
+export default WordgenContainer;

@@ -2,10 +2,6 @@ import React, { useState } from 'react';
 
 const tabItems = [
   {
-    id: 0,
-    title: 'None',
-  },
-  {
     id: 1,
     title: 'Random',
   },
@@ -17,7 +13,7 @@ const tabItems = [
 
 const TabItems = ({title, onItemClicked, isActive=false}) => {
   return (
-    <div className={isActive ? 'tabitem' : 'tabitem tabitem--inactive'} onClick={onItemClicked}>
+    <div className="tabitem" onClick={onItemClicked}>
       <p>{title}</p>
     </div>
   )
@@ -26,20 +22,20 @@ const TabItems = ({title, onItemClicked, isActive=false}) => {
 const Tabs = ({getActiveTab}) => {
   const [active, setActive] = useState(0);
 
-  const handleFormChange = (id, title) => {
+  const handleFormChange = (id) => {
     setActive(id);
-    return getActiveTab(title);
+    return getActiveTab(id);
   };
 
   return (
-    <div className="wrapper-tabs">
-      <div className="tabs">
+    <div>
+      <div>
         {
           tabItems.map(({id, title}) => 
           <TabItems 
             key={title}
             title={title}
-            onItemClicked={() => handleFormChange(id, title)}
+            onItemClicked={() => handleFormChange(id)}
             isActive={active === id} />
         )}
       </div>
