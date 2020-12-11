@@ -4,7 +4,7 @@ import React from 'react';
 const NameViewer = ({data}) => {
 
   return(
-    <div className="wordview-scrollbox">
+    <div className="namegen-view-scrollbox">
       {data.map(({word}) => (
         <li key={word}>{word}</li>
       ))}

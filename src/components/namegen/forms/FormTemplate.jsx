@@ -14,7 +14,7 @@ const FormTemplate = ({onceSubmitted}) => {
   };
 
   return(
-    <div className="wordform-scrollbox">
+    <div className="namegen-form-scrollbox">
       <form onSubmit={handleSubmit(onSubmit)}>
         <label>Template:</label>
         <input type="text" name="template" ref={register} />

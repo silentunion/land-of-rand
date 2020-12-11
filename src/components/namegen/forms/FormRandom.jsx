@@ -7,7 +7,7 @@ const FormRandom = ({onClickRandom}) => {
   };
 
   return(
-    <div className="wordform-scrollbox">
+    <div className="namegen-form-scrollbox">
       <button onClick={handleEvent} className="button-random">
         Completely Random
       </button>

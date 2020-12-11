@@ -46,7 +46,7 @@ const NamegenContainer = () => {
   }};
 
   return (
-  <div className="wordgen-container">
+  <div className="namegen-container">
     <Tabs getActiveTab={(tab) => setForm(tab)} />
     {chooseForm()}
     <NameViewer data={data} />

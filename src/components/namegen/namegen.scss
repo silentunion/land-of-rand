@@ -1,10 +1,37 @@
-.wordgen-container {
+.namegen-tabs {
+    transform: translateY(-5rem);
+}
+
+.namegen-tabitem {
+    border: 2px solid #fff;
+    cursor: pointer;
+    width: 100px;
+    height: 50px;
+    text-align: center;
+    padding: 15px;
+    background-color: $color-white;
+    border: 1px solid $color-black;
+    border-right: 0.5px dashed $color-grey;
+    border-top-left-radius: 1rem;
+    border-bottom-left-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    transform: translateX(1px)
+  }
+  
+.namegen-tabitem--inactive {
+  opacity: 0.3;
+  filter: grayscale(100%);
+}
+
+.namegen-container {
     display: flex;
     height: 30rem;
     align-items: center;
     justify-content: center;
 
-    .wordform-scrollbox {
+    .namegen-form-scrollbox {
         margin: 0;
         padding: 1rem;
         display: inline-block;
@@ -19,7 +46,7 @@
         border-bottom-left-radius: 0.5rem;
     }
     
-    .wordview-scrollbox {
+    .namegen-view-scrollbox {
         margin: 0;
         padding: 1rem;
         display: inline-block;
