@@ -28,20 +28,20 @@ const NamegenContainer = () => {
     }
   }, [words, endpoint]);
 
-  const handleFormRandom = () => {
-    setEndpoint(2);
-    setWords({'num': 5});
+  const chooseTemplate = (formData) => {
+    setEndpoint(1);
+    setWords(formData);
   };
 
-  const changeTemplate = (formData) => {
-    setEndpoint(1);
+  const chooseRandom = (formData) => {
+    setEndpoint(2);
     setWords(formData);
   };
 
   const chooseForm = () => {
     switch (form) {
-      case 'random': return <FormRandom onClickRandom={handleFormRandom} />;
-      case 'template': return <FormTemplate onceSubmitted={(formData) => changeTemplate(formData)} />;
+      case 'random': return <FormRandom onClickRandom={(formData) => chooseRandom(formData)} />;
+      case 'template': return <FormTemplate onClickTemplate={(formData) => chooseTemplate(formData)} />;
       default: return null;
   }};
 
