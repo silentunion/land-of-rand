@@ -19,8 +19,8 @@ const NamegenContainer = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(getNames());
-  }, [endpoint]);
+    dispatch(getNames(true, 6, 'vcvcvcv'));
+  }, [dispatch]);
 
   var stuff = useSelector((state) => state.names.data);
   console.log(stuff);
