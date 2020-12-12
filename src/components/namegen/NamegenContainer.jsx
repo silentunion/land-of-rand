@@ -19,11 +19,11 @@ const NamegenContainer = () => {
       setData([{'word': ''}])
     } else if (endpoint === 1) {
       axios
-        .get(`http://localhost:5000/words/${words.num}/${words.template}`)
+        .get(`http://localhost:5000/words/${words.isWeighted}/${words.num}/${words.template}`)
         .then((res) => setData(res.data))
     } else if (endpoint === 2) {
       axios
-        .get(`http://localhost:5000/words/random/${words.num}`)
+        .get(`http://localhost:5000/words/${words.isWeighted}/${words.num}`)
         .then((res) => setData(res.data))
     }
   }, [words, endpoint]);

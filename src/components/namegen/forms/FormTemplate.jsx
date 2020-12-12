@@ -10,6 +10,7 @@ const FormTemplate = ({onceSubmitted}) => {
   });
 
   const onSubmit = (data) => {
+    console.log(data)
     return onceSubmitted(data);
   };
 
@@ -21,6 +22,7 @@ const FormTemplate = ({onceSubmitted}) => {
           <input type="text" name="template" ref={register} />
           <label>Number of Words:</label>
           <input type="number" name="num" min="1" ref={register} />
+          <input type="checkbox" name="isWeighted" ref={register} />
           <input type="submit" name="Submit" />
         </form>
       </div>
