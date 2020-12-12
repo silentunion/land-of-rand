@@ -19,29 +19,29 @@ const NamegenContainer = () => {
       setData([{'word': ''}])
     } else if (endpoint === 1) {
       axios
-        .get(`http://localhost:5000/words/${words.num}/${words.template}`)
+        .get(`http://localhost:5000/words/${words.isWeighted}/${words.num}/${words.template}`)
         .then((res) => setData(res.data))
     } else if (endpoint === 2) {
       axios
-        .get(`http://localhost:5000/words/random/${words.num}`)
+        .get(`http://localhost:5000/words/${words.isWeighted}/${words.num}`)
         .then((res) => setData(res.data))
     }
   }, [words, endpoint]);
 
-  const handleFormRandom = () => {
-    setEndpoint(2);
-    setWords({'num': 5});
+  const chooseTemplate = (formData) => {
+    setEndpoint(1);
+    setWords(formData);
   };
 
-  const changeTemplate = (formData) => {
-    setEndpoint(1);
+  const chooseRandom = (formData) => {
+    setEndpoint(2);
     setWords(formData);
   };
 
   const chooseForm = () => {
     switch (form) {
-      case 'random': return <FormRandom onClickRandom={handleFormRandom} />;
-      case 'template': return <FormTemplate onceSubmitted={(formData) => changeTemplate(formData)} />;
+      case 'random': return <FormRandom onClickRandom={(formData) => chooseRandom(formData)} />;
+      case 'template': return <FormTemplate onClickTemplate={(formData) => chooseTemplate(formData)} />;
       default: return null;
   }};
 
