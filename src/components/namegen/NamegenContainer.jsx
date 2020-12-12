@@ -1,5 +1,7 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { getNames } from '../../redux/ducks/names';
 import axios from 'axios';
 
 import Tabs from './forms/Tabs';
@@ -14,19 +16,28 @@ const NamegenContainer = () => {
   const [endpoint, setEndpoint] = useState(0);
   const [form, setForm] = useState('none');
   
+  const dispatch = useDispatch();
+
   useEffect(() => {
-    if (endpoint === 0) {
-      setData([{'word': ''}])
-    } else if (endpoint === 1) {
-      axios
-        .get(`http://localhost:5000/words/${words.isWeighted}/${words.num}/${words.template}`)
-        .then((res) => setData(res.data))
-    } else if (endpoint === 2) {
-      axios
-        .get(`http://localhost:5000/words/${words.isWeighted}/${words.num}`)
-        .then((res) => setData(res.data))
-    }
-  }, [words, endpoint]);
+    dispatch(getNames());
+  }, [endpoint]);
+
+  var stuff = useSelector((state) => state.names.data);
+  console.log(stuff);
+
+  // useEffect(() => {
+  //   if (endpoint === 0) {
+  //     setData([{'word': ''}])
+  //   } else if (endpoint === 1) {
+  //     axios
+  //       .get(`http://localhost:5000/words/${words.isWeighted}/${words.num}/${words.template}`)
+  //       .then((res) => setData(res.data))
+  //   } else if (endpoint === 2) {
+  //     axios
+  //       .get(`http://localhost:5000/words/${words.isWeighted}/${words.num}`)
+  //       .then((res) => setData(res.data))
+  //   }
+  // }, [words, endpoint]);
 
   const chooseTemplate = (formData) => {
     setEndpoint(1);
