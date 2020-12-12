@@ -7,10 +7,12 @@ const FormRandom = ({onClickRandom}) => {
   };
 
   return(
-    <div className="wordform-scrollbox">
-      <button onClick={handleEvent} className="button-random">
-        Completely Random
-      </button>
+    <div className="form-container">
+      <div className="namegen-form">
+        <button onClick={handleEvent} className="button-random">
+          Completely Random
+        </button>
+      </div>
     </div>
   );
 };

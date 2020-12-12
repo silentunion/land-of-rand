@@ -12,7 +12,7 @@ const NamegenContainer = () => {
   const [data, setData] = useState([]);
   const [words, setWords] = useState([]);
   const [endpoint, setEndpoint] = useState(0);
-  const [form, setForm] = useState('None');
+  const [form, setForm] = useState('none');
   
   useEffect(() => {
     if (endpoint === 0) {
@@ -40,14 +40,14 @@ const NamegenContainer = () => {
 
   const chooseForm = () => {
     switch (form) {
-      case 'Random': return <FormRandom onClickRandom={handleFormRandom} />;
-      case 'Template': return <FormTemplate onceSubmitted={(formData) => changeTemplate(formData)} />;
+      case 'random': return <FormRandom onClickRandom={handleFormRandom} />;
+      case 'template': return <FormTemplate onceSubmitted={(formData) => changeTemplate(formData)} />;
       default: return null;
   }};
 
   return (
-  <div className="wordgen-container">
-    <Tabs getActiveTab={(tab) => setForm(tab)} />
+  <div className="namegen-container">
+    <Tabs getActiveTab={(name) => setForm(name)} />
     {chooseForm()}
     <NameViewer data={data} />
   </div>
