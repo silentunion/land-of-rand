@@ -1,8 +1,5 @@
 import React from 'react';
-import { useState, useEffect, useRef } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { getNames } from '../../redux/ducks/names';
-import axios from 'axios';
+import { useState } from 'react';
 
 import Tabs from './forms/Tabs';
 import NameViewer from './NameViewer';

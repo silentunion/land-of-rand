@@ -18,7 +18,7 @@ const FormRandom = () => {
     if (state) {
       dispatch(getNames(state));
     }
-  }, [state]);
+  }, [dispatch, state]);
 
   const onSubmit = (data) => {
     setState({...data, endpoint: 1});

@@ -19,7 +19,7 @@ const FormTemplate = () => {
     if (state) {
       dispatch(getNames(state));
     }
-  }, [state]);
+  }, [dispatch, state]);
 
   const onSubmit = (data) => {
     setState({...data, endpoint: 2});
