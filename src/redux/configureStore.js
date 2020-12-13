@@ -3,11 +3,9 @@ import createSagaMiddleware from 'redux-saga';
 
 import { watcherSaga } from './sagas/rootSaga';
 
-import tabSelectReducer from "./ducks/namegenTabSelect";
 import namesReducer from "./ducks/names";
 
 const reducer = combineReducers({
-    tabSelect: tabSelectReducer,
     names: namesReducer,
 });
 
