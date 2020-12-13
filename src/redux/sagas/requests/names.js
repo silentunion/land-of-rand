@@ -1,15 +1,16 @@
 import axios from 'axios';
 
-export function requestGetNames(req) {
-    if (req.endpoint === 1){
+export function requestGetNames(state) {
+    const endpoint = state.endpoint;
+    if (endpoint === 1){
         return axios.request({
             method: 'GET',
-            url: `http://localhost:5000/words/${req.isWeighted}/${req.num}`,
+            url: `http://localhost:5000/words/${state.isWeighted}/${state.num}`,
         })
-    } else if (req.endpoint === 2) {
+    } else if (endpoint === 2) {
         return axios.request({
             method: 'GET',
-            url: `http://localhost:5000/words/${req.isWeighted}/${req.num}/${req.template}`,
+            url: `http://localhost:5000/words/${state.isWeighted}/${state.num}/${state.template}`,
         })
     }
 }

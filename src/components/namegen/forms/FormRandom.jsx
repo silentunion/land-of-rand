@@ -20,8 +20,8 @@ const FormRandom = () => {
     }
   }, [dispatch, state]);
 
-  const onSubmit = (data) => {
-    setState({...data, endpoint: 1});
+  const onSubmit = (formData) => {
+    setState({...formData, endpoint: 1});
   };
 
   return(

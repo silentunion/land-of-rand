@@ -7,8 +7,8 @@ const NameViewer = () => {
 
   let renderData;
   if (data) {
-    renderData = data.map(({word}) => {
-        return <li key={word}>{word}</li>
+    renderData = data.map(({name}) => {
+        return <li key={name}>{name}</li>
     })
     }
 
