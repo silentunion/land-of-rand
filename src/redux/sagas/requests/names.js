@@ -18,6 +18,6 @@ export function requestGetNames(state) {
 
     return axios.request({
         method: 'GET',
-        url: `http://localhost:5000/words/${urlEnd}`,
+        url: `http://localhost:5000/basic/${urlEnd}`,
     });
 }
