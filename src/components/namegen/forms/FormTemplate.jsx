@@ -1,7 +1,11 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import { useDispatch } from 'react-redux';
 import { useForm } from 'react-hook-form';
 
+import { getNames } from '../../../redux/ducks/names';
+
 const FormTemplate = ({onClickTemplate}) => {
+  const [state, setState] = useState();
   const { register, handleSubmit } = useForm({
     defaultValues: {
       template: "vcvcvc",
@@ -10,8 +14,15 @@ const FormTemplate = ({onClickTemplate}) => {
     }
   });
 
+  const dispatch = useDispatch();
+  useEffect(() => {
+    if (state) {
+      dispatch(getNames(state));
+    }
+  }, [state]);
+
   const onSubmit = (data) => {
-    return onClickTemplate(data);
+    setState({...data, endpoint: 2});
   };
 
   return(

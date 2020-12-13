@@ -1,9 +1,9 @@
 export const GET_NAMES = "GET_NAMES";
 const SET_NAMES = "SET_NAMES";
 
-export const getNames = (isWeighted, num, template) => ({
+export const getNames = (req) => ({
     type: GET_NAMES,
-    isWeighted, num, template
+    ...req
 });
 
 export const setNames = (data) => ({
@@ -18,7 +18,6 @@ export const initialState = {
 export default (state = initialState, action) => {
     switch (action.type) {
         case SET_NAMES:
-            console.log(state);
             const { data } = action;
             return { ...state, data: data };
         default:

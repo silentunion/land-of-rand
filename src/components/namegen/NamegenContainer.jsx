@@ -1,5 +1,5 @@
 import React from 'react';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { getNames } from '../../redux/ducks/names';
 import axios from 'axios';
@@ -15,15 +15,16 @@ const NamegenContainer = () => {
   const [words, setWords] = useState([]);
   const [endpoint, setEndpoint] = useState(0);
   const [form, setForm] = useState('none');
-  
-  const dispatch = useDispatch();
+  const isInitialRender = useRef('true');
 
-  useEffect(() => {
-    dispatch(getNames(true, 6, 'vcvcvcv'));
-  }, [dispatch]);
+  // const dispatch = useDispatch();
 
-  var stuff = useSelector((state) => state.names.data);
-  console.log(stuff);
+  // useEffect(() => {
+  //     dispatch(getNames(true, 6, 'vcvcvcv', 2));
+  // }, [dispatch]);
+
+  // const stuff = useSelector((state) => (state.names.data));
+  // console.log(stuff);
 
   // useEffect(() => {
   //   if (endpoint === 0) {

@@ -2,9 +2,9 @@ import { call, put } from 'redux-saga/effects';
 import { setNames } from '../../ducks/names';
 import { requestGetNames } from '../requests/names';
 
-export function* handleGetNames(sends) {
+export function* handleGetNames(state) {
     try {
-        var response = yield call(requestGetNames, sends.isWeighted, sends.num, sends.template);
+        var response = yield call(requestGetNames, state);
         var { data } = response;
         yield put(setNames(data));
     } catch (error) {
