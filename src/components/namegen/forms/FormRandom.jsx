@@ -1,16 +1,27 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import { useDispatch } from 'react-redux';
 import { useForm } from 'react-hook-form';
 
-const FormRandom = ({onClickRandom}) => {
+import { getNames } from '../../../redux/ducks/names';
+
+const FormRandom = () => {
+  const [state, setState] = useState();
   const { register, handleSubmit } = useForm({
     defaultValues: {
-      num: 1,
+      num: 10,
       isWeighted: true,
     }
   });
 
-  const onSubmit = (data) => {
-    return onClickRandom(data);
+  const dispatch = useDispatch();
+  useEffect(() => {
+    if (state) {
+      dispatch(getNames(state));
+    }
+  }, [dispatch, state]);
+
+  const onSubmit = (formData) => {
+    setState({...formData, endpoint: 1});
   };
 
   return(
