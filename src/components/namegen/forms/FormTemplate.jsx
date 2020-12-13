@@ -4,12 +4,12 @@ import { useForm } from 'react-hook-form';
 
 import { getNames } from '../../../redux/ducks/names';
 
-const FormTemplate = ({onClickTemplate}) => {
+const FormTemplate = () => {
   const [state, setState] = useState();
   const { register, handleSubmit } = useForm({
     defaultValues: {
-      template: "vcvcvc",
-      num: 1,
+      template: "vcvcv",
+      num: 10,
       isWeighted: true,
     }
   });
