@@ -1,7 +1,7 @@
 import React from 'react';
 import { useState } from 'react';
 
-import Tabs from './forms/Tabs';
+import Tabs from './tabs/Tabs';
 import NameViewer from './NameViewer';
 
 import FormRandom from './forms/FormRandom';

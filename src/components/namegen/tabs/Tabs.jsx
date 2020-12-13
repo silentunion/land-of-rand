@@ -1,22 +1,6 @@
 import React, { useState } from 'react';
+import tabItems from './tabItems';
 
-const tabItems = [
-  {
-    id: 0,
-    title: 'None',
-    name: 'none',
-  },
-  {
-    id: 1,
-    title: 'Random',
-    name: 'random',
-  },
-  {
-    id: 2,
-    title: 'Template',
-    name: 'template',
-  },
-];
 
 const TabItems = ({title, onItemClicked, isActive=false}) => {
   return (
