@@ -1,0 +1,95 @@
+nav {
+    display:flex;
+    justify-content: space-around;
+    min-height: 10vh;
+    align-items: center;
+    background-color: $color-secondary;
+
+    .logo {
+        font-family: Vivaldi, Georgia, Times, 'Times New Roman', serif;
+        font-size: 3.2rem;
+        font-style: italic;
+        color: $color-base;
+    }
+
+    .nav-links {
+        display: flex;
+        justify-content: space-around;
+        width: 20%;
+        transform: translateX(0%) translateY(0%);
+
+        li {
+            border-right: 1px solid transparentize($color-base, 0.8);
+            border-bottom: 0px solid;
+            padding: 0.5rem 7.5%;
+            
+            &:last-of-type {
+                border-right: 0rem solid;
+            }
+
+            &:hover {
+                background-color: lighten($color-secondary, 5%);
+                color: 0px solid $color-base;
+            }
+        }
+
+        a {
+            font-family: Georgia, Times, 'Times New Roman', serif;
+            font-size: 1.5rem;
+            color: $color-base;
+
+            &:hover {
+                color: darken($color-base, 10%);
+            }
+        }
+    }
+
+    .nav-burger {
+        font-size: 2rem;
+        color: $color-base;
+        display: none;
+        cursor: pointer;
+    }
+}
+
+@media all and (max-width: 768px) {
+    nav {
+        .nav-links {
+            position: absolute;
+            display: block;
+            top: 0;
+            left: 0;
+            height: 50%;
+            background-color: darken($color-secondary, 10%);
+            padding: 0.5rem;
+            width: 50%;
+            transform: translateY(-100%);
+            transition: 0.5s ease-in-out;
+
+            li {
+                padding: 0.5rem;
+                border-right: 0px solid;
+                border-bottom: 1px solid transparentize($color-base, 0.8);
+
+                &:last-of-type {
+                    border-bottom: 0rem solid;
+                }
+
+                &:hover {
+                    background-color: lighten($color-secondary, 5%);
+                    color: 0px solid $color-base;
+                }
+            }
+
+            a {
+                &:hover {
+                    color: $color-base;
+                }
+            }
+        }
+
+        .nav-burger {
+            display: block;
+        }
+    }
+}

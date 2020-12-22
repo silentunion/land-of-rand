@@ -1,11 +1,14 @@
 import React from 'react';
 import './main.scss';
-import WordViewContainer from './components/wordview/WordViewContainer';
+
+import NavBar from './components/navbar/Navbar';
+import NamegenContainer from './components/namegen/NamegenContainer';
 
 function App() {
   return (
     <div className="App">
-      <WordViewContainer />
+      <NavBar />
+      <NamegenContainer />
     </div>
   );
 }
