@@ -13,7 +13,7 @@ const NavBar = () => {
         <li><a href="words">Words</a></li>
         <li><a href="about">About</a></li>
       </ul>
-      <i onClick={() => setOpen(!open)} className="nav-burger fas fa-bars" />
+        <i onClick={() => setOpen(!open)} className="nav-burger fas fa-bars" />
     </nav>
   </div>
 };

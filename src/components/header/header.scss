@@ -22,9 +22,24 @@ header {
             background-image: radial-gradient(rgba($color-base, 0.6), rgba($color-base, 1)), url(./map-texture.png);
         }
 
-        p {
-            vertical-align: bottom;
+        .quote-box {
+            position: relative;
+            width: 30rem;
+            background-color: $color-base;
+
+            p {
+                position: absolute;
+                bottom: 0;
+                right: 0;
+                padding-bottom: 0.5rem;
+                font-family: Georgia, Times, 'Times New Roman', serif;
+                font-size: 1.2rem;
+                font-style: italic;
+                font-weight: 300;
+            }
         }
+
+
     }
 
     .bottom-section {
