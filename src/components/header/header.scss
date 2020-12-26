@@ -1,0 +1,30 @@
+header {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+
+    .top-section {
+        background-color: $color-primary;
+        height: 1rem;
+    }
+    
+    .main-section {
+        display: flex;
+        justify-content: space-around;
+        background-color: $color-base;
+        height: 5rem;
+
+        h1 {
+            vertical-align: middle;
+        }
+
+        p {
+            vertical-align: bottom;
+        }
+    }
+
+    .bottom-section {
+        background-color: $color-highlight;
+        height: 0.5rem;
+    }
+}

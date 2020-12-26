@@ -1,7 +1,7 @@
 import React from 'react';
 import { useState } from 'react';
 
-const Navbar = () => {
+const NavBar = () => {
   const [open, setOpen] = useState(false);
 
   return <div>
@@ -18,4 +18,4 @@ const Navbar = () => {
   </div>
 };
 
-export default Navbar;
+export default NavBar;
