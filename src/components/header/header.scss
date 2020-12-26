@@ -10,12 +10,16 @@ header {
     
     .main-section {
         display: flex;
-        justify-content: space-around;
+        justify-content: first baseline;
         background-color: $color-base;
-        height: 5rem;
+        height: 8rem;
 
-        h1 {
-            vertical-align: middle;
+        .title {
+            padding: 0.5rem 15rem;
+            font-family: Vivaldi, Georgia, Times, 'Times New Roman', serif;
+            font-size: 3rem;
+            color: rgba(darken($color-secondary, 25%), 0.8);
+            background-image: radial-gradient(rgba($color-base, 0.6), rgba($color-base, 1)), url(./map-texture.png);
         }
 
         p {
