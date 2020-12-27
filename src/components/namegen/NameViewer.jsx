@@ -13,7 +13,7 @@ const NameViewer = () => {
     }
 
   return(
-    <div className="form-container">
+    <div className="namegen-view-container">
       <div className="namegen-view">
         {renderData}
       </div>
