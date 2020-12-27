@@ -8,7 +8,9 @@
 @import "sass/base/utilities";
 
 @import "sass/layout/grid";
-@import "sass/layout/header";
 
-@import "components/navbar/navbar";
+@import "components/Header/header";
+@import "components/Navbar/navbar";
 @import "components/namegen/namegen";
+
+@import "components/ExtraSpace/extraspace";

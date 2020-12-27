@@ -1,0 +1,53 @@
+header {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+
+    .top-section {
+        background-color: $color-primary;
+        height: 1rem;
+    }
+    
+    .main-section {
+        display: flex;
+        justify-content: first baseline;
+        background-color: $color-base;
+        height: 8rem;
+
+        .title {
+            padding: 0.5rem 15rem;
+            font-family: Vivaldi, Georgia, Times, 'Times New Roman', serif;
+            font-size: 3rem;
+            color: rgba(darken($color-secondary, 25%), 0.8);
+            background-image: radial-gradient(rgba($color-base, 0.6), rgba($color-base, 1)), url(./map-texture.png);
+        }
+
+        .quote-box {
+            position: relative;
+            width: 30rem;
+            background-color: $color-base;
+
+            p {
+                position: absolute;
+                bottom: 0;
+                right: 0;
+                padding-bottom: 0.5rem;
+                font-family: Georgia, Times, 'Times New Roman', serif;
+                font-size: 1.2rem;
+                font-style: italic;
+                font-weight: 300;
+            }
+        }
+    }
+
+    .bottom-section {
+        height: 0.5rem;
+        background-color: $color-gold-dark;
+        background: linear-gradient(180deg,
+            rgba($color-gold-dark,1) 0%,
+            rgba(lighten($color-gold-dark, 5%),1) 10%,
+            rgba($color-gold-light,1), 50%,
+            rgba(lighten($color-gold-dark, 5%),1), 90%,
+            rgba($color-gold-dark, 1) 100%);
+    }
+}
