@@ -10,6 +10,7 @@ function App() {
   return (
     <div className="App">
       <Header />
+      <div className="sticky-nav" ><NavBar /></div>
       <NamegenContainer />
       <ExtraSpace />
     </div>
