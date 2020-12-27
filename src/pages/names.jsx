@@ -4,8 +4,10 @@ import ExtraSpace from '../components/ExtraSpace/ExtraSpace';
 
 const Names = () => {
   return (
-    <div>
-      <NamegenContainer />
+    <div className="page-home-names">
+      <div className="page-home-namegen">
+        <NamegenContainer />
+      </div>
       <ExtraSpace />
     </div>
   )
