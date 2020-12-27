@@ -3,10 +3,21 @@ import { useState } from 'react';
 
 const NavBar = () => {
   const [open, setOpen] = useState(false);
+  const [title, setTitle] = useState(false);
+
+  const changeBackground = () => {
+    if(window.scrollY >= 100) {
+      setTitle(true);
+    } else {
+      setTitle(false);
+    };
+  };
+
+  window.addEventListener('scroll', changeBackground);
 
   return <div>
     <nav>
-      {/* <div className="logo">Land of Rand</div> */}
+      {title ? <div className="logo">Land of Rand</div> : void 0}
       <ul className="nav-links" 
         style={{transform: open ? "translateY(4rem)" : ""}}>
         <li><a href="home">Home</a></li>
