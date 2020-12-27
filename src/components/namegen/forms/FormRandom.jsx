@@ -25,7 +25,7 @@ const FormRandom = () => {
   };
 
   return(
-    <div className="form-container">
+    <div className="namegen-form-container">
       <div className="namegen-form">
         <form onSubmit={handleSubmit(onSubmit)}>
             <label>Number of Words:</label>

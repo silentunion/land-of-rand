@@ -21,16 +21,16 @@ const Tabs = ({getActiveTab}) => {
   };
 
   return (
-    <div className="wrapper-tabs">
+    <div className="namegen-tabs-container">
       <div className="namegen-tabs">
-        {
-          tabItems.map(({id, title, name}) => 
-          <TabItems 
-            key={title}
-            title={title}
-            onItemClicked={() => handleFormChange(id, name)}
-            isActive={active === id} />
-        )}
+      {
+        tabItems.map(({id, title, name}) => 
+        <TabItems 
+          key={title}
+          title={title}
+          onItemClicked={() => handleFormChange(id, name)}
+          isActive={active === id} />
+      )}
       </div>
     </div>
   )
