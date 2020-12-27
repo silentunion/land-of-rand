@@ -1,14 +1,18 @@
 import React from 'react';
 import './main.scss';
 
-import NavBar from './components/navbar/Navbar';
+import Header from './components/Header/Header';
+import NavBar from './components/Header/Navbar';
 import NamegenContainer from './components/namegen/NamegenContainer';
+import ExtraSpace from './components/ExtraSpace/ExtraSpace';
 
 function App() {
   return (
     <div className="App">
-      <NavBar />
+      <Header />
+      <div className="sticky-nav" ><NavBar /></div>
       <NamegenContainer />
+      <ExtraSpace />
     </div>
   );
 }

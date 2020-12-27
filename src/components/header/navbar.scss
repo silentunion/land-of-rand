@@ -1,9 +1,20 @@
+.sticky-nav {
+    position: sticky;
+    top: 0;
+}
+
 nav {
     display:flex;
     justify-content: space-around;
-    min-height: 10vh;
+    min-height: 6vh;
     align-items: center;
     background-color: $color-secondary;
+    background: linear-gradient(180deg,
+        rgba(darken($color-secondary, 15%),1) 0%,
+        rgba(darken($color-secondary, 5%),1) 10%,
+        rgba($color-secondary,1), 50%,
+        rgba(darken($color-secondary, 5%),1), 90%,
+        rgba(darken($color-secondary, 15%),1) 100%);
 
     .logo {
         font-family: Vivaldi, Georgia, Times, 'Times New Roman', serif;
