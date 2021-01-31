@@ -20,9 +20,8 @@ const NavBar = () => {
       {title ? <div className="logo">Land of Rand</div> : void 0}
       <ul className="nav-links" 
         style={{transform: open ? "translateY(4rem)" : ""}}>
-        <li><a href="/">Home</a></li>
-        <li><a href="/names">Names</a></li>
-        <li><a href="/about">About</a></li>
+        <li><a className="nav-button" href="/">Home</a></li>
+        <li><a className="nav-button" href="/about">About</a></li>
       </ul>
       <i onClick={() => setOpen(!open)} className="nav-burger fas fa-bars" />
     </nav>

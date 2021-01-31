@@ -1,7 +1,7 @@
 .sticky-nav {
     position: sticky;
     top: 0;
-    z-index: 9999;
+    z-index: 888;
 }
 
 nav {
@@ -24,6 +24,8 @@ nav {
         color: $color-base;
     }
 
+
+
     .nav-links {
         display: flex;
         justify-content: space-around;
@@ -34,6 +36,37 @@ nav {
             border-right: 1px solid transparentize($color-base, 0.8);
             border-bottom: 0px solid;
             padding: 0.5rem 7.5%;
+
+            display: block;
+            white-space: nowrap;
+            height: 100%;
+            width: 100%;
+
+            .nav-button {
+                font-family: Georgia, Times, 'Times New Roman', serif;
+                font-size: 1.5rem;
+                background-color: transparent;
+                border: none;
+                color: $color-base;
+                cursor: pointer;
+            }
+
+            a {
+                font-family: Georgia, Times, 'Times New Roman', serif;
+                font-size: 1.5rem;
+                color: $color-base;
+                display: block;
+                height: 100%;
+                width: 100%;
+                text-align: center;
+                padding: 0;
+                margin: 0;
+    
+                &:hover {
+                    color: darken($color-base, 10%);
+                }
+    
+            }
             
             &:last-of-type {
                 border-right: 0rem solid;
@@ -45,15 +78,7 @@ nav {
             }
         }
 
-        a {
-            font-family: Georgia, Times, 'Times New Roman', serif;
-            font-size: 1.5rem;
-            color: $color-base;
 
-            &:hover {
-                color: darken($color-base, 10%);
-            }
-        }
     }
 
     .nav-burger {
