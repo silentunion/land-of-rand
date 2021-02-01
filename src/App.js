@@ -16,7 +16,7 @@ function App() {
       <Header />
       <div className="sticky-nav" ><NavBar /></div>
       <Switch>
-        <Route exact path="/" component={Home} />
+        <Route exact path="/" component={Names} />
         <Route path="/names" component={Names} />
         <Route path="/about" component={About} />
       </Switch>
