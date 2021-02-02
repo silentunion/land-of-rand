@@ -4,11 +4,11 @@
     justify-content: center;
 
     .textbox {
-        margin-top: 5%;
+        margin: 5% auto;
         padding: 2rem;
         width: 50%;
-        background-color: lighten($color-primary, 5%);
-        border-radius: 10%;
+        background-color: $color-primary;
+        border-radius: 1rem;
         color: $color-white;
         justify-items: left;
     }
