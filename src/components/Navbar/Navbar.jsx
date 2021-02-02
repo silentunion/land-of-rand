@@ -1,12 +1,13 @@
 import React from 'react';
 import { useState } from 'react';
+import LORBrown from '../../images/LOR-brown.png';
 
 const NavBar = () => {
   const [open, setOpen] = useState(false);
   const [title, setTitle] = useState(false);
 
   const changeBackground = () => {
-    if(window.scrollY >= 100) {
+    if(window.scrollY >= 150) {
       setTitle(true);
     } else {
       setTitle(false);
@@ -17,12 +18,11 @@ const NavBar = () => {
 
   return <div>
     <nav>
-      {title ? <div className="logo">Land of Rand</div> : void 0}
+      {title ? <div className="logo"><img src={LORBrown} alt="logo" /></div> : void 0}
       <ul className="nav-links" 
         style={{transform: open ? "translateY(4rem)" : ""}}>
-        <li><a href="home">Home</a></li>
-        <li><a href="words">Words</a></li>
-        <li><a href="about">About</a></li>
+        <li><a className="nav-button" href="/">Home</a></li>
+        <li><a className="nav-button" href="/about">About</a></li>
       </ul>
       <i onClick={() => setOpen(!open)} className="nav-burger fas fa-bars" />
     </nav>

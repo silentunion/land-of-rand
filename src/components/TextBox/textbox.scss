@@ -1,0 +1,15 @@
+.textbox-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .textbox {
+        margin: 5% auto;
+        padding: 2rem;
+        width: 50%;
+        background-color: $color-primary;
+        border-radius: 1rem;
+        color: $color-white;
+        justify-items: left;
+    }
+}

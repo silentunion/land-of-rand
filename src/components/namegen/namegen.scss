@@ -1,65 +1,86 @@
-.namegen-tabs {
-    transform: translateY(-5rem);
-}
-
-.namegen-tabitem {
-    border: 2px solid #fff;
-    cursor: pointer;
-    width: 100px;
-    height: 50px;
-    text-align: center;
-    padding: 15px;
-    background-color: $color-white;
-    border: 1px solid $color-black;
-    border-right: 0.5px dashed $color-grey;
-    border-top-left-radius: 1rem;
-    border-bottom-left-radius: 1rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    transform: translateX(1px)
-  }
-  
-.namegen-tabitem--inactive {
-  opacity: 0.3;
-  filter: grayscale(100%);
-}
-
 .namegen-container {
+    height: 40rem;
+    width: 70rem;
+
     display: flex;
-    height: 30rem;
     align-items: center;
-    justify-content: center;
-}
+    justify-content: space-evenly;
 
-.form-container {
-    margin: 0rem;
+    .namegen-tabs-container {
+        height: 100%;
+    
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-end;
 
-    .namegen-form {
-        padding: 1rem;
-        display: inline-block;
-        height: 400px;
-        border: 1px solid $color-black;
-        background-color: $color-white;
-        overflow: auto;
-        box-sizing: content-box;
-        width: 180px;
-        border-right: 0px solid $color-black;
+        .namegen-tabs {
+            transform: translateY(20px);
+
+            .namegen-tabitem {
+                cursor: pointer;
+                width: 150px;
+                height: 50px;
+                text-align: center;
+                padding: 15px;
+                background-color: $color-white;
+        
+                border: 1.5px solid $color-black;
+                border-right: 0.5px dashed $color-grey;
+                border-top-left-radius: 1rem;
+                border-bottom-left-radius: 1rem;
+                transform: translateX(1px);
+
+                font-weight: 400;
+            }
+        }
+           
+        .namegen-tabitem--inactive {
+        opacity: 0.3;
+        filter: grayscale(100%);
+        }
     }
     
-    .namegen-view {
-        padding: 1rem;
-        display: inline-block;
-        height: 400px;
-        border: 1px solid $color-black;
-        background-color: $color-white;
-        overflow: auto;
-        box-sizing: content-box;
-        width: 360px;
-        border-top-right-radius: 0.5rem;
-        border-bottom-right-radius: 0.5rem;
+    .namegen-form-container {
+        height: 100%;
+        flex-grow: 1;
+    
+        .namegen-form {
+            padding: 1rem;
+            display: inline-block;
+            height: 100%;
+            width: 100%;
+    
+            background-color: $color-white;
+            overflow: auto;
+            // box-sizing: content-box;
+            border: 1.5px solid $color-black;
+            border-right: 0px solid $color-black;
+            border-top-left-radius: 0.5rem;
+            border-bottom-left-radius: 0.5rem;
+        }
+    }
+    
+    .namegen-view-container {
+        height: 100%;
+        flex-grow: 10;
+     
+        .namegen-view {
+            height: 100%;
+            width: 100%;
+            padding: 1rem;
+            display: inline-block;
+            border: 1.5px solid $color-black;
+            background-color: $color-white;
+            overflow: auto;
+            // box-sizing: content-box;
+            border-top-right-radius: 0.5rem;
+            border-bottom-right-radius: 0.5rem;
+        }
     }
 }
+
+
 
 @media all and (max-width: 768px) {
     .wordview-scrollbox {

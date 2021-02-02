@@ -14,28 +14,36 @@ header {
         background-color: $color-base;
         height: 8rem;
 
-        .title {
+        .title-container {
             padding: 0.5rem 15rem;
-            font-family: Vivaldi, Georgia, Times, 'Times New Roman', serif;
-            font-size: 3rem;
+
             color: rgba(darken($color-secondary, 25%), 0.8);
             background-image: radial-gradient(rgba($color-base, 0.6), rgba($color-base, 1)), url(./map-texture.png);
+        
+            .title {
+                z-index: 999;
+                opacity: 0.8;
+                transform: translateY(0.5rem);
+            }
         }
 
         .quote-box {
             position: relative;
             width: 30rem;
-            background-color: $color-base;
+            // background-color: $color-base;
+            background-image: radial-gradient(rgba($color-base, 0.3), rgba($color-base, 1)), url(../../images/test-background.jpg);
+            box-shadow: 0 0 8px 8px $color-base inset;
 
             p {
                 position: absolute;
                 bottom: 0;
-                right: 0;
+                right: 1rem;
                 padding-bottom: 0.5rem;
                 font-family: Georgia, Times, 'Times New Roman', serif;
                 font-size: 1.2rem;
                 font-style: italic;
                 font-weight: 300;
+                text-align: end;
             }
         }
     }
