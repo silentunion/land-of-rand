@@ -18,10 +18,11 @@ nav {
         rgba(darken($color-secondary, 15%),1) 100%);
 
     .logo {
-        font-family: Vivaldi, Georgia, Times, 'Times New Roman', serif;
-        font-size: 3.2rem;
-        font-style: italic;
-        color: $color-base;
+        
+        img {
+            height: 70px;
+            padding-top: 0.25rem;
+        }
     }
 
 
