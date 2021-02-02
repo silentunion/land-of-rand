@@ -1,13 +1,20 @@
 import React from 'react';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import LORBrown from '../../images/LOR-brown.png';
 
 const NavBar = () => {
   const [open, setOpen] = useState(false);
+  const [mobile, setMobile] = useState(false);
   const [title, setTitle] = useState(false);
 
+  useEffect(() => {
+    if(window.innerHeight <= 768) {
+      setTitle(true);
+    }
+  }, [window.innerHeight]);
+
   const changeBackground = () => {
-    if(window.scrollY >= 150) {
+    if(window.scrollY >= 150 || window.innerHeight <= 768) {
       setTitle(true);
     } else {
       setTitle(false);
