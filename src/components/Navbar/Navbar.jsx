@@ -20,7 +20,7 @@ const NavBar = () => {
     <nav>
       {title ? <div className="logo"><img src={LORBrown} alt="logo" /></div> : void 0}
       <ul className="nav-links" 
-        style={{transform: open ? "translateY(4rem)" : ""}}>
+        style={{transform: open ? "translateY(3rem)" : ""}}>
         <li><a className="nav-button" href="/">Home</a></li>
         <li><a className="nav-button" href="/about">About</a></li>
       </ul>

@@ -59,3 +59,19 @@ header {
             rgba($color-gold-dark, 1) 100%);
     }
 }
+
+@media all and (max-width: 768px) {
+    header {
+        .top-section {
+            height: 0.25rem;
+        }
+
+        .main-section {
+            display: none;
+        }
+
+        .bottom-section {
+            display: none;
+        }
+    }
+}
