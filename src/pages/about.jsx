@@ -7,7 +7,7 @@ const About = () => {
   return (
     <div>
       <TextBox />
-      <ExtraSpace />
+      {/* <ExtraSpace /> */}
     </div>
   )
 };
