@@ -1,6 +1,6 @@
 .namegen-container {
     height: 40rem;
-    width: 70rem;
+    width: 60rem;
 
     display: flex;
     align-items: center;
@@ -93,6 +93,10 @@
         background-color: $color-white;
         overflow: auto;
         box-sizing: content-box;
+    }
+
+    .namegen-container {
+        width: 100%;
     }
 }
 

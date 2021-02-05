@@ -13,3 +13,11 @@
         justify-items: left;
     }
 }
+
+@media all and (max-width: 768px) {
+    .textbox-container {
+        .textbox {
+            width: 95%;
+        }
+    }      
+}

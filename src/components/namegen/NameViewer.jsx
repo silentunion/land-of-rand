@@ -10,7 +10,7 @@ const NameViewer = () => {
     renderData = data.map(({name}) => {
         return <li key={name}>{name}</li>
     })
-    }
+  }
 
   return(
     <div className="namegen-view-container">
