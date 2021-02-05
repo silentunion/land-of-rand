@@ -9,13 +9,15 @@ header {
     }
     
     .main-section {
-        display: flex;
-        justify-content: first baseline;
+        display: grid;
+        grid-template-columns: 1fr auto auto 2fr;
+        grid-template-rows: 128px;
         background-color: $color-base;
         height: 8rem;
 
         .title-container {
             padding: 0.5rem 15rem;
+            grid-column-start: 2;
 
             color: rgba(darken($color-secondary, 25%), 0.8);
             background-image: radial-gradient(rgba($color-base, 0.6), rgba($color-base, 1)), url(./map-texture.png);
@@ -29,6 +31,8 @@ header {
 
         .quote-box {
             position: relative;
+            grid-column-start: 3;
+            justify-self: end;
             width: 30rem;
             // background-color: $color-base;
             background-image: radial-gradient(rgba($color-base, 0.3), rgba($color-base, 1)), url(../../images/test-background.jpg);
